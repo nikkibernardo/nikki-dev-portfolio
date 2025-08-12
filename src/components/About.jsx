@@ -6,7 +6,7 @@ import { SectionWrapper } from '../hoc';
 import { styles } from '../styles';
 import { fadeIn, textVariant } from '../utils/motion';
 
-const ServiceCard = ({ index, title, icon }) => (
+const ServiceCard = ({ index, title, icon, description }) => (
   <Tilt className="xs:w-[250px] w-full">
     <motion.div
       variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
@@ -20,9 +20,10 @@ const ServiceCard = ({ index, title, icon }) => (
         }}
         className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
       >
-        <img src={icon} alt="web-development" className="w-16 h-16 object-contain" loading="lazy" />
+        {/* <div src={icon} alt="web-development" className="w-16 h-16 object-contain" loading="lazy"></div> */}
 
         <h3 className="text-white text-[20px] font-bold text-center">{title}</h3>
+        <p className="text-white text-[15px] text-center">{description}</p>
       </div>
     </motion.div>
   </Tilt>
@@ -32,19 +33,15 @@ const About = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview</h2>
+        {/* <p className={styles.sectionSubText}>Introduction</p> */}
+        <h2 className={`text-gray-100 font-semibold text-2xl xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-[1.1] md:leading-[1.15] tracking-tight text-center`}>About me</h2>
       </motion.div>
 
       <motion.p
         variants={fadeIn('', '', 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        className="mt-4 text-[17px] text-center mx-auto w-full md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[75%] max-w-[800px]"
       >
-        I am a Computer Science student at SRM University and multilingual speaker with a passion
-        for ethical hacking, artificial intelligence, and neural language processing. I am looking
-        to join a company that values innovation, collaboration, and continuous learning and am
-        confident that my enthusiasm and drive will help me succeed in any role that leverages my
-        passion for technology.
+        I'm a web developer and designer passionate about crafting visually engaging, user-focused digital experiences. I thrive at the intersection of clean design and functional code, building websites and applications that feel seamless and intuitive.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">
@@ -52,6 +49,11 @@ const About = () => {
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
+      
+
+
+
+
     </>
   );
 };

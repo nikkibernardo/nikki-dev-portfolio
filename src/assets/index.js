@@ -26,12 +26,28 @@ import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
 import tailwind from "./tech/tailwind.png";
 import threejs from "./tech/threejs.png";
+import figma from "./tech/figma.png";
+// Import additional tech logos
+import github2 from "./tech/github.png";
+import vite from "./tech/vite.png";
+import bootstrap from "./tech/bootstrap.png";
+// import vs from "./tech/vs.png";
+import php from "./tech/php.png";
+import npm from "./tech/npm.png";
+import pinterest from "./tech/pinterest.png";
+import shadcn from "./tech/shadcn.png";
 
 // Import common assets
-import logo from "./logo.svg";
+import logo from "./logo.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
+
+// import project imgs
+import niyoghub from "./projects/niyoghub.png";
+import cps from "./projects/cps.png";
+import sycip from "./projects/sycip.png";
+import filheim from "./projects/filheim.png";
 
 export {
   mathwork,
@@ -59,4 +75,18 @@ export {
   menu,
   close,
   eduskill,
+  figma,
+  github2,
+  vite,
+  bootstrap,    
+  // vs,
+  php,
+  npm,
+  pinterest,
+  shadcn,
+
+  niyoghub,
+  cps,
+  filheim,
+  sycip,
 };

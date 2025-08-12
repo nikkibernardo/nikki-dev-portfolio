@@ -8,9 +8,14 @@ const Navbar = () => {
   const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
 
+  // const toggleResume = () => {
+  //   const resumeUrl = '/Resume.pdf';
+  //   window.open(resumeUrl);
+  // };
   const toggleResume = () => {
-    const resumeUrl = '/Resume.pdf';
-    window.open(resumeUrl);
+    const fileId = '1xkWaKKhqnscobFSDHAfaj-VU0pjMpgWP'; // Your Drive file ID
+    const viewUrl = `https://drive.google.com/file/d/${fileId}/view?usp=sharing`;
+    window.open(viewUrl, '_blank'); // Opens in a new tab
   };
 
   useEffect(() => {
@@ -20,13 +25,13 @@ const Navbar = () => {
   }, [toggle]);
 
   const renderNavLinks = (isSecondary) => (
-    <ul className={`list-none ${isSecondary ? 'flex sm:hidden' : 'hidden sm:flex'} flex-row gap-6`}>
+    <ul className={`list-none ${isSecondary ? 'flex sm:hidden' : 'hidden sm:flex'} flex-row gap-8`}>
       {navLinks.map((link) => (
         <li
           key={link.id}
           className={`${
-            active === link.title ? 'text-white' : isSecondary ? 'text-secondary' : 'text-white'
-          } hover:text-white text-[20px] font-medium cursor-pointer`}
+            active === link.title ? 'text-gray-100' : isSecondary ? 'text-secondary' : 'text-white'
+          } hover:text-white text-[20px] font-light cursor-pointer`}
           onClick={() => {
             setActive(link.title);
             if (isSecondary) {
@@ -37,20 +42,20 @@ const Navbar = () => {
           <a href={`#${link.id}`}>{link.title}</a>
         </li>
       ))}
-      <li
+      {/* <li
         className={`text-${
-          isSecondary ? 'secondary' : 'white'
-        } hover:text-white text-[20px] font-medium cursor-pointer`}
+          isSecondary ? 'secondary' : 'gray-100'
+        } hover:text-white text-[20px] font-light cursor-pointer border-1 border-gray-100`}
       >
         <button onClick={toggleResume}>Resume</button>
-      </li>
+      </li> */}
     </ul>
   );
 
   return (
     <>
       <nav
-        className={`${styles.paddingX} w-full flex items-center py-3 fixed top-0 z-20 bg-primary`}
+        className={`${styles.paddingX} w-full flex items-center py-7 fixed top-0 z-20 bg-primary`}
       >
         <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
           <Link
@@ -63,8 +68,8 @@ const Navbar = () => {
           >
             <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
             <p className="text-white text-[20px] font-bold cursor-pointer flex">
-              LOHIT&nbsp;
-              <span className="sm:block hidden">KOLLURI</span>
+              {/* <<//>> */}
+              <span className="sm:block hidden text-[#915EFF]">enkei</span>
             </p>
           </Link>
           {renderNavLinks(false)}

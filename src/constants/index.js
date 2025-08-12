@@ -15,21 +15,44 @@ import {
   termpw,
   payloadmaster,
   threejs,
+  figma,
+  github2,
+  vite,
+  bootstrap,
+  // vs,
+  php,
+  npm,
+  pinterest,
+  shadcn,
+
   mhft,
   sketcher,
   mathwork,
   CompileVortex,
   eduskill,
+
+  niyoghub,
+  cps,
+  filheim,
+  sycip,
 } from "../assets";
 
 export const navLinks = [
+  {
+    id: "home",
+    title: "Home",
+  },
   {
     id: "about",
     title: "About",
   },
   {
+    id: "skills",
+    title: "Skills",
+  },
+  {
     id: "work",
-    title: "Work",
+    title: "Projects",
   },
   {
     id: "contact",
@@ -38,21 +61,29 @@ export const navLinks = [
 ];
 
 export const services = [
-  { title: "C", icon: c },
-  { title: "C++", icon: cpp },
-  { title: "Python", icon: python },
-  { title: "Java", icon: java },
+  { title: "Clean Code", description: "I write clean, maintainable code that’s built to last—combining efficiency with readability for scalable, collaborative solutions.", icon: c },
+  { title: "Responsive Design", description: "I build responsive designs that adapt flawlessly across all devices, ensuring seamless user experiences from desktop to mobile.", icon: cpp },
+  { title: "User-centered", description: "I design with empathy, crafting intuitive digital experiences that prioritize real user needs—because great design solves problems.", icon: python },
+  { title: "Performance", description: "I design and develop user-centered experiences—where performance meets intuition, and enhances usability.", icon: java },
 ];
 
 export const technologies = [
-  { name: "HTML 5", icon: html },
-  { name: "CSS 3", icon: css },
+  // { name: "HTML 5", icon: html },
+  // { name: "CSS 3", icon: css },
   { name: "JavaScript", icon: javascript },
-  { name: "Rect JS", icon: reactjs },
+  { name: "React JS", icon: reactjs },
   { name: "Tailwind CSS", icon: tailwind },
   { name: "Node JS", icon: nodejs },
-  { name: "Three JS", icon: threejs },
   { name: "git", icon: git },
+  { name: "Figma", icon: figma },
+  { name: "GitHub", icon: github2 },
+  { name: "Vite", icon: vite }, 
+  { name: "Bootstrap", icon: bootstrap },
+  // { name: "Visual Studio Code", icon: vs },
+  { name: "PHP", icon: php },
+  { name: "NPM", icon: npm },
+  { name: "Pinterest", icon: pinterest },
+  { name: "Shadcn", icon: shadcn },
 ];
 
 export const experiences = [
@@ -95,76 +126,55 @@ export const experiences = [
 
 export const projects = [
   {
-    name: "WeatherPedia",
+    name: "NiyogHub",
     description:
-      "Web-based platform that allows users to access weather information for their location by entering it in the search field",
+      "A web and mobile application designed to connect coconut farmers in Quezon Province with the Philippine Coconut Authority (PCA), leveraging AI to enhance communication, support, and promote sustainable growth in the coconut agriculture sector",
     tags: [
-      { name: "Javascript", color: "blue-text-gradient" },
-      { name: "HTML", color: "green-text-gradient" },
-      { name: "bootstrap 5.3.0", color: "pink-text-gradient" },
-      { name: "Weather API by API Ninjas", color: "yellow-text-gradient" },
+      { name: "React & React Native", color: "blue-text-gradient" },
+      { name: "Roboflow", color: "green-text-gradient" },
+      { name: "GPT-4 & Whisper", color: "pink-text-gradient" },
+      { name: "Google Maps & Leaflet", color: "pink-text-gradient" },
+      { name: "MERN", color: "yellow-text-gradient" },
     ],
-    image: weatherpedia,
-    source_code_link: "https://github.com/lohitkolluri/WeatherPedia",
+    image: niyoghub,
+    source_code_link: "https://github.com/nikkibernardo/niyoghub-webuser-frontend/tree/main",
   },
   {
-    name: "Terminal Like Portfolio Website",
+    name: "Corporate Planning System (CPS)",
     description:
-      "A terminal themed portfolio website that allows users to type into the terminal and use commands like a real terminal.",
+      "A web application designed to streamline the corporate planning process, enabling efficient management of projects, resources, and timelines.",
     tags: [
-      { name: "HTML", color: "blue-text-gradient" },
-      { name: "css", color: "green-text-gradient" },
-      { name: "Javascript", color: "pink-text-gradient" },
+      { name: "React", color: "blue-text-gradient" },
+      { name: "Next.js", color: "blue-text-gradient" },
+      { name: "C# .NET", color: "green-text-gradient" },
+      { name: "OpenAI", color: "pink-text-gradient" },
     ],
-    image: termpw,
-    source_code_link: "https://github.com/lohitkolluri/lohitkolluri.github.io",
+    image: cps,
+    source_code_link: "https://github.com/nikkibernardo/filheim-frontend",
   },
   {
-    name: "Mental Health Fitness Tracker",
+    name: "Filheim",
     description:
-      "ML model that utilizes regression techniques to provide insights into mental health and make predictions based on the available data.",
+      "A web application designed to showcase luxurious cabinetry, providing a minimalist and elegant user interface for browsing and purchasing high-end cabinetry products.",
     tags: [
-      { name: "Machine Learning", color: "blue-text-gradient" },
-      { name: "Jupyter Notebook", color: "green-text-gradient" },
-      { name: "Regression Algorithms", color: "pink-text-gradient" },
+      { name: "React", color: "blue-text-gradient" },
+      { name: "Tailwing CSS", color: "green-text-gradient" },
+      { name: "Strapi", color: "pink-text-gradient" },
+      { name: "Google Workspace", color: "green-text-gradient" },
+      { name: "NameCheap", color: "pink-text-gradient" },
     ],
-    image: mhft,
+    image: filheim,
     source_code_link:
-      "https://github.com/lohitkolluri/mental_health_fitness_tracker",
+      "https://github.com/nikkibernardo/filheim-frontend",
   },
   {
-    name: "PayloadMaster",
+    name: "SyCip Builders",
     description:
-      "Tool to automate payload creation using the Metasploit framework",
+      "A website designed to showcase the portfolio of SyCip Builders, a construction company, providing an elegant and user-friendly interface for potential clients.",
     tags: [
-      { name: "shell", color: "blue-text-gradient" },
+      { name: "webflow", color: "blue-text-gradient" },
     ],
-    image: payloadmaster,
-    source_code_link: "https://github.com/lohitkolluri/PayloadMaster",
-  },
-  {
-    name: "CompileVortex",
-    description:
-      "Tool to automate payload creation using the Metasploit framework",
-    tags: [
-      { name: "Javascript", color: "blue-text-gradient" },
-      { name: "CSS", color: "green-text-gradient" },
-      { name: "HTML", color: "pink-text-gradient" },
-    ],
-    image: CompileVortex,
-    source_code_link: "https://github.com/lohitkolluri/CompileVortex",
-  },
-  {
-    name: "Sketcher",
-    description:
-      "Convert an input image to a pencil sketch using OpenCV and Matplotlib libraries.",
-    tags: [
-      { name: "OpenCV", color: "blue-text-gradient" },
-      { name: "Matplotlib", color: "green-text-gradient" },
-      { name: "Python", color: "pink-text-gradient" },
-    ],
-
-    image: sketcher,
-    source_code_link: "https://github.com/lohitkolluri/Image_to_Pencil_Sketch_App",
+    image: sycip,
+    source_code_link: "https://www.sycipbuilders.com/",
   },
 ];

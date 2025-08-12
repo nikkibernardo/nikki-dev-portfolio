@@ -8,139 +8,69 @@ import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import "../index.css";
 
-const InputField = ({ label, value, onChange, placeholder, name, type }) => (
-  <label className="flex flex-col">
-    <span className="text-white font-medium mb-4">{label}</span>
-    <input
-      type={type}
-      name={name}
-      value={value}
-      onChange={onChange}
-      placeholder={placeholder}
-      className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-    />
-  </label>
-);
+import { MdAttachEmail } from "react-icons/md";
+import { RiContactsBookFill } from "react-icons/ri";
+import { AiOutlineLinkedin } from "react-icons/ai";
+import { FaGithub } from "react-icons/fa";
+import { FaFacebookSquare } from "react-icons/fa";
 
 const Contact = () => {
-  const formRef = useRef();
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [loading, setLoading] = useState(false);
-  const [emailError, setEmailError] = useState("");
-  const [nameError, setNameError] = useState("");
-  const [confirmation, setConfirmation] = useState("");
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm({
-      ...form,
-      [name]: value,
-    });
-  };
-
-  const validateEmail = (email) => {
-    const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    return regex.test(email);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setEmailError("");
-    setNameError("");
-    setConfirmation("");
-
-    if (!validateEmail(form.email)) {
-      setEmailError("Please enter a valid email address.");
-      return;
-    }
-
-    if (!form.name.trim()) {
-      setNameError("Name is required.");
-      return;
-    }
-
-    setLoading(true);
-
-    emailjs
-      .send(
-        "service_r2i0by4",
-        "template_mf5x3bh",
-        {
-          from_name: form.name,
-          to_name: "Lohit Kolluri",
-          from_email: form.email,
-          to_email: "lohitkolluri@gmail.com",
-          message: form.message,
-        },
-        "p-gXzzyvEhPaJ0XA-"
-      )
-      .then(
-        () => {
-          setLoading(false);
-          setConfirmation("Thank you! I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        }
-      )
-      .catch((error) => {
-        setLoading(false);
-        console.error(error);
-        setConfirmation("Something went wrong. Please try again. :/");
-      });
-  };
 
   return (
-    <div className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}>
+    <div className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden mb-20`}>
       <motion.div variants={slideIn("left", "tween", 0.2, 1)} className="flex-[0.75] bg-black-100 p-8 rounded-2xl">
-        <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact Me</h3>
+        <h3 className="text-gray-100 font-semibold text-2xl xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-[1.1] md:leading-[1.15] tracking-tight text-center py-2">Contact Information</h3>
+        <p className="text-center">Feel free to reach out through any of these channels</p>
 
-        <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8">
-          <InputField
-            label="Your Name"
-            name="name"
-            value={form.name}
-            onChange={handleChange}
-            placeholder="Insert Your name here..."
-            type="text"
-          />
-          {nameError && <span className="text-red-500">{nameError}</span>}
+        <div>
+          <div className="flex justify-center items-center mt-12 flex-col bg-tertiary p-6 rounded-lg border-2 border-gray-600">
+            <MdAttachEmail size={30}/>
+            <h2 className="font-semibold text-xl">Email</h2>
+            <p>bernardonikki12@gmail.com</p>
+          </div>
 
-          <InputField
-            label="Email Address"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-            placeholder="What's your email address?"
-            type="email"
-          />
-          {emailError && <span className="text-red-500">{emailError}</span>}
+          <div className="flex justify-center items-center mt-4 flex-col bg-tertiary p-6 rounded-lg border-2 border-gray-600">
+            <RiContactsBookFill size={30}/>
+            <h2 className="font-semibold text-xl">Contact Number</h2>
+            <p>09763398048</p>
+          </div>
 
-          <InputField
-            label="Your Message"
-            name="message"
-            value={form.message}
-            onChange={handleChange}
-            placeholder="What you want to say...?"
-            type="text"
-          />
-
-          <button
-            type="submit"
-            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
-          >
-            {loading ? "Sending..." : "Send"}
-          </button>
-          {confirmation && <p className="text-green-500">{confirmation}</p>}
-        </form>
+          <div className="flex justify-center items-center mt-8 flex-col">
+            <h2 className="font-semibold text-xl">Social Profiles</h2>
+            <div className="flex flex-row gap-4 mt-2">
+              {/* LinkedIn */}
+              <a 
+                href="https://www.linkedin.com/in/marianne-nikki-bernardo-a36790370/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white hover:text-blue-600 transition-colors"
+              >
+                <AiOutlineLinkedin size={32} />
+              </a>
+              
+              {/* GitHub */}
+              <a 
+                href="https://github.com/nikkibernardo" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white hover:text-blue-500 transition-colors"
+              >
+                <FaGithub size={30} />
+              </a>
+              
+              {/* Facebook */}
+              <a 
+                href="#" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white hover:text-blue-500 transition-colors"
+              >
+                <FaFacebookSquare size={30} />
+              </a>
+            </div>
+          </div>
+        </div>
+        
       </motion.div>
 
       <motion.div variants={slideIn("right", "tween", 0.2, 1)} className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]">
